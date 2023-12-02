@@ -14,8 +14,11 @@ st.write("In UNIV102, we often discuss ways in which we communicate climate chan
 st.write('Use the sliders to adjust the time window you would like to view. Note that the original dataset spans from 2006 to 2019, but for loading speeds, the dataset has been limited to 2017, which is still 10,000,000 tweets.')
 st.markdown('Source: Effrosynidis, Dimitrios, Alexandros I. Karasakalidis, Georgios Sylaios, and Avi Arampatzis. "The climate change Twitter dataset." Expert Systems with Applications 204 (2022): 117541.')
 # df = pd.read_csv('The Climate Change Twitter Dataset.csv')
-print("DHFLSDHFJLDHFUILDSHFULHSDULGHUISDHGFULHGFDUGS")
-df = pd.read_csv('data.csv', engine="pyarrow")
+@st.cache_data  # 👈 Add the caching decorator
+def load_data():
+    df = pd.read_csv('data.csv', engine="pyarrow")
+    return df
+df = load_data()
 st.write(df.columns)
 df['year'] = pd.DatetimeIndex(df['created_at']).year
 df['date'] = pd.DatetimeIndex(df['created_at']).normalize()
