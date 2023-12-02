@@ -16,7 +16,7 @@ st.markdown('Source: Effrosynidis, Dimitrios, Alexandros I. Karasakalidis, Georg
 # df = pd.read_csv('The Climate Change Twitter Dataset.csv')
 print("DHFLSDHFJLDHFUILDSHFULHSDULGHUISDHGFULHGFDUGS")
 df = pd.read_csv('data.csv', engine="pyarrow")
-print(df.columns)
+st.write(df.columns)
 df['year'] = pd.DatetimeIndex(df['created_at']).year
 df['date'] = pd.DatetimeIndex(df['created_at']).normalize()
 df['created_at'] = pd.to_datetime(df['created_at'])
