@@ -15,6 +15,7 @@ st.write('Use the sliders to adjust the time window you would like to view. Note
 st.markdown('Source: Effrosynidis, Dimitrios, Alexandros I. Karasakalidis, Georgios Sylaios, and Avi Arampatzis. "The climate change Twitter dataset." Expert Systems with Applications 204 (2022): 117541.')
 # df = pd.read_csv('The Climate Change Twitter Dataset.csv')
 df = pd.read_csv('data.csv', engine="pyarrow")
+print(df.columns)
 df['year'] = pd.DatetimeIndex(df['created_at']).year
 df['date'] = pd.DatetimeIndex(df['created_at']).normalize()
 df['created_at'] = pd.to_datetime(df['created_at'])
