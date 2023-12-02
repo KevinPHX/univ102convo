@@ -11,7 +11,7 @@ st.subheader("UNIV102 Let's Talk about Climate Change Final Project")
 st.write("Kevin Yin")
 
 st.write("In UNIV102, we often discuss ways in which we communicate climate change and what are the effective ways of discussing its impacts to a potentially non-receptive audience. For my conversation starter, I decided to look at how people have discussed climate change on the largest global forum: Twitter (now X). This project is a series of visualizations that tell the story of climate communication on the internet from a bird's eye view via an exploration in to the Climate Change Twitter Dataset from Effrosynidis et al.")
-st.write('Use the sliders to adjust the time window you would like to view. Note that the original dataset spans from 2006 to 2019, but for loading speeds, the dataset has been limited to 2017, which is still 10,000,000 tweets.')
+st.write('Use the sliders to adjust the time window you would like to view. Note that the original dataset spans from 2006 to 2019, but for loading speeds, the dataset has been limited to 2017, which is still 4,000,000 tweets.')
 st.markdown('Source: Effrosynidis, Dimitrios, Alexandros I. Karasakalidis, Georgios Sylaios, and Avi Arampatzis. "The climate change Twitter dataset." Expert Systems with Applications 204 (2022): 117541.')
 # df = pd.read_csv('The Climate Change Twitter Dataset.csv')
 @st.cache_data  # 👈 Add the caching decorator
@@ -22,7 +22,6 @@ def load_data():
     df['created_at'] = pd.to_datetime(df['created_at'])
     return df
 df = load_data()
-st.write(df.columns)
 
 
 
