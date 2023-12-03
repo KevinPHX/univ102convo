@@ -56,7 +56,7 @@ time_series(data)
 st.write("This is the average daily sentiment of tweents, with sentiment scores ranging from -1 to 1 (from negative to positive respectively). Sentiment and all other annotations were determined by the dataset using various machine learning and AI techniques from classical machine learning to large language models (LLMs).")
 
 def word_count(data):
-    counts = data.id.groupby(df['topic']).count()
+    counts = data.id.groupby(data['topic']).count()
     go_fig = go.Figure()
 
     col_obj = go.Scatter(
